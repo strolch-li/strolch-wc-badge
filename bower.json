@@ -1,0 +1,29 @@
+{
+  "name": "strolch-wc-badge",
+  "description": "Strolch WebComponent Badge",
+  "version": "0.1.0",
+  "authors": [
+    "Robert von Burg"
+  ],
+  "keywords": [
+    "strolch",
+    "inspector"
+  ],
+  "main": "strolch-wc-badge.html",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:4treesCH/strolch-wc-badge.git"
+  },
+  "license": "https://github.com/4treesCH/strolch-wc-badge/blob/master/LICENSE",
+  "homepage": "https://github.com/4treesCH/strolch-wc-badge",
+  "ignore": [],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.11.3",
+
+    "paper-badge": "PolymerElements/paper-badge#^1.1.4",
+    "neon-animation": "PolymerElements/neon-animation#^1.2.5"
+  },
+  "devDependencies": {
+  }
+}

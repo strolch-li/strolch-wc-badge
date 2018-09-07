@@ -1,0 +1,92 @@
+<!-- Components -->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-badge/paper-badge.html">
+<link rel="import" href="../neon-animation/neon-animations.html">
+<link rel="import" href="../neon-animation/neon-animation-runner-behavior.html">
+<link rel="import" href="../neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="../neon-animation/animations/scale-down-animation.html">
+
+<dom-module id="strolch-wc-badge">
+    <template>
+        <!-- Style -->
+        <style is="custom-style">
+            :host {
+                display: block;
+                position: relative;
+                z-index: 1;
+            }
+            paper-badge {
+                --paper-badge-background: var(--paper-indigo-200);
+                top: -7px !important;
+                right: -7px !important;
+                bottom: initial !important;
+                left: initial !important;
+            }
+        </style>
+
+        <!-- Content -->
+        <paper-badge id="badge" label="[[label]]"></paper-badge>
+    </template>
+
+    <script>
+		Polymer({
+			<!-- Settings -->
+			is: "strolch-wc-badge",
+
+			<!-- Behaviors -->
+			behaviors: [
+				Polymer.NeonAnimationRunnerBehavior
+			],
+
+			<!-- Properties -->
+			properties: {
+				hide: {
+					type: Boolean,
+					observer: "observeHide"
+				},
+				animationConfig: {
+					value: function() {
+						return {
+							"show": {
+								name: "scale-up-animation",
+								node: this.$.badge
+							},
+							"hide": {
+								name: "scale-down-animation",
+								node: this.$.badge
+							}
+						}
+					}
+				}
+			},
+
+			<!-- Observers -->
+			observeHide: function(newValue, oldValue) {
+				// show this element before the animation is started
+				this.hidden = false;
+
+				// animated to show this badge
+				if(newValue == false) {
+					this.playAnimation("show");
+				}
+				// animated to hide this badge
+				else {
+					this.playAnimation("hide");
+				}
+			},
+
+			<!-- Listeners -->
+			listeners: {
+				"neon-animation-finish": "onAnimationFinish"
+			},
+			onAnimationFinish: function() {
+				this.hidden = this.hide;
+			},
+
+			<!-- Function -->
+			ready: function() {
+				this.hidden = true;
+			}
+		});
+    </script>
+</dom-module>
