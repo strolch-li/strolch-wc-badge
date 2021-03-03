@@ -1,7 +1,7 @@
 {
   "name": "strolch-wc-badge",
   "description": "Strolch WebComponent Badge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authors": [
     "Robert von Burg"
   ],
@@ -15,8 +15,8 @@
     "type": "git",
     "url": "git@github.com:4treesCH/strolch-wc-badge.git"
   },
-  "license": "https://github.com/4treesCH/strolch-wc-badge/blob/master/LICENSE",
-  "homepage": "https://github.com/4treesCH/strolch-wc-badge",
+  "license": "https://github.com/strolch-li/strolch-wc-badge/blob/master/LICENSE",
+  "homepage": "https://github.com/strolch-li/strolch-wc-badge",
   "ignore": [],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.11.3",
