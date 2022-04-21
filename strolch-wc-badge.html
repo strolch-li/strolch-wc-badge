@@ -25,7 +25,7 @@
         </style>
 
         <!-- Content -->
-        <paper-badge id="badge" label="[[label]]"></paper-badge>
+        <paper-badge id="badge" label="[[label]]" for="[[for]]"></paper-badge>
     </template>
 
     <script>
@@ -40,6 +40,9 @@
 
 			<!-- Properties -->
 			properties: {
+                for: {
+                    type: String
+                },
 				hide: {
 					type: Boolean,
 					observer: "observeHide"
@@ -65,13 +68,11 @@
 				// show this element before the animation is started
 				this.hidden = false;
 
-				// animated to show this badge
-				if(newValue == false) {
-					this.playAnimation("show");
-				}
-				// animated to hide this badge
-				else {
+				// animated to show/hide this badge
+				if(newValue) {
 					this.playAnimation("hide");
+				} else {
+					this.playAnimation("show");
 				}
 			},
 
