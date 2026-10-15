@@ -24,6 +24,5 @@
     "paper-badge": "PolymerElements/paper-badge#^1.1.4",
     "neon-animation": "PolymerElements/neon-animation#^1.2.5"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
